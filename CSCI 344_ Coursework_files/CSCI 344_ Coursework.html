@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSCI 344_ Coursework_files/styles.css">
+    <title>CSCI 344: Coursework</title>
+</head>
+<body>
+    <header>
+        <h1>Maria's Coursework</h1>
+    </header>
+    <main>
+        <section>
+            <h2>In-Class Exercises</h2>
+        </section>
+        <section>
+            <h2>Tutorials</h2>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial02/index.html">Tutorial 2a</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/01-css-diner/index.html">Tutorial 3, Exercise 1</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/02-box-model/index.html">Tutorial 3, Exercise 2</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/03-fonts/index.html">Tutorial 3, Exercise 3</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/04-flex/index.html">Tutorial 3, Exercise 4</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/05-navbar/">Tutorial 3, Exercise 5</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/06-grid/index.html">Tutorial 3, Exercise 6</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial03/07-tacotemple/index.html">Tutorial 3, Exercise 7</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial04/index.html">Tutorial 4</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial05/01-font-switcher/">Tutorial 5, Exercise 1</a></li>
+                <li><a href="http://127.0.0.1:5500/tutorials/tutorial05/02-theme-switcher/">Tutorial 5, Exercise 2</a></li>
+
+            </ul>
+        </section>
+        <section>
+            <h2>Homework</h2>
+            <li><a href="http://127.0.0.1:5500/homework/hw02/index.html">Homework 2</a></li>
+        </section>
+    </main>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

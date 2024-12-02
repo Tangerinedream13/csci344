@@ -1,0 +1,46 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+    border: solid 1px black;
+    padding: 5px;
+    margin: 3px;
+    
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+nav, ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+ul {
+    list-style-type: none;
+}
+
+
+nav {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+a {
+    display: block;
+}
+

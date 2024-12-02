@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(9, 112, 72);
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    padding: 8px;
+    background-color: rgb(189, 235, 223);
+}
+div {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.item-1, .item-3, .item-5 {
+    grid-column: 1 / span 3;
+    background-color: rgb(114, 229, 164);
+}
+.item-2, .item-4 {
+    grid-column: 3 / span 3;
+    background-color: white;
+}

@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    height: 100vh;
+   /* put parent into flex mode */
+   display: flex; 
+   flex-direction: column; 
+}
+
+section {
+    border: solid 4px orangered;
+    width: 200px;
+    height: 75px;
+}
