@@ -28,6 +28,8 @@ api = Api(app)
 # order matters here (needs to come after DB init line)
 with app.app_context():
     current_user = User.query.filter_by(id=12).one()
+    # 1. Grab the web token from the header
+    # 2. Decode to get the user id
 
 
 # Initialize routes for all of your API endpoints:
