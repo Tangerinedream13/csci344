@@ -26,13 +26,13 @@ class PostListEndpoint(Resource):
                 return Response(
                     json.dumps({"message": "The limit is 50"}), 
                     mimetype="application/json", 
-                    status=400
+                    status=200
                 )
         except:
             return Response(
                 json.dumps({"message": "The limit must be an integer between 1 and 50"}), 
                 mimetype="application/json", 
-                status=400
+                status=404
             )
         
         posts = Post.query.filter(Post.user_id.in_(ids_for_me_and_my_friends)
