@@ -13,10 +13,13 @@ class SuggestionsListEndpoint(Resource):
         self.current_user = current_user
 
     def get(self):
-        user_ids = get_authorized_user_ids(self.current_user)
-        users = User.query.filter(~User.id.in_(user_ids)).limit(7).all()
+        suggestions_ids = get_authorized_user_ids(self.current_user)
+        suggestions = User.query.filter(~User.id.in_(suggestions_ids)).limit(7).all()
+
+        suggestions_dict = [suggestion.to_dict() for suggestion in suggestions]
+        
         return Response(
-            json.dumps([user.to_dict() for user in users]),
+            json.dumps(suggestions_dict[0:7]),
             mimetype="application/json",
             status=200,
         )
