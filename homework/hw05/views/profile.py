@@ -15,6 +15,7 @@ class ProfileDetailEndpoint(Resource):
 
     def get(self):
         # TODO: Add GET logic...
+
         return Response(
             json.dumps({}),
             mimetype="application/json",
