@@ -13,7 +13,10 @@ class BookmarksListEndpoint(Resource):
         self.current_user = current_user
 
     def get(self):
-        # TODO: Add GET Logic...
+        
+        bookmarks = Bookmark.query.filter_by(
+            user_id=self.current_user.id).order_by('id').all()
+        bookmark_dict = [bookmark.to_dict() for bookmark in bookmarks]
         return Response(
             json.dumps([]),
             mimetype="application/json",
