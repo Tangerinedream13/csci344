@@ -1,11 +1,20 @@
 // 1. Create your getBusinesses function here:
 
 async function getBusinesses(search_term, location, num_results) {
-    search_term.log
-    location.log
-    num_results.log
-}
+    console.log("Search Term:", search_term);
+    console.log("Location:", location);
+    console.log("Number of Results:", num_results);
 
+    const endpoint = "https://www.apitutor.org/yelp/simple/v3/businesses/search";
+    const url = `${endpoint}?term=${encodeURIComponent(search_term)}&location=${encodeURIComponent(location)}&limit=${num_results}`;
+
+    const response = await fetch(url);
+
+    const data = await response.json();
+
+    return data;
+}
+        
 // 2. When you're done, uncomment the test code below and preview index.html in your browser:
 
 
