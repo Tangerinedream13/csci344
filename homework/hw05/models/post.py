@@ -68,7 +68,7 @@ class Post(db.Model):
             user_bookmark_id_list = [
                 bookmark.id for bookmark in filter(filter_function, self.bookmarks)
             ]
-            print(user_like_id_list)
+            # print(user_like_id_list)
             if len(user_like_id_list) == 1:
                 d["current_user_like_id"] = user_like_id_list[0]
             if len(user_bookmark_id_list) == 1:
