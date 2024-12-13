@@ -1,31 +1,18 @@
 // 1. Create your businessToHTML function here:
-function businessToHTML(business) {
-    const name = business.name; 
-    const address = business.address; 
-    const image_url = business.image_url;
-    const rating = business.rating;
-    const price = business.price;
-    const review_count = business.review_count;
-
-    return `
-        <div class="business">
-            <h2>${name}</h2>
-            <p><strong>Address:</strong> ${address}</p>
-            <img src="${image_url}" alt="Image of ${name}" width="150" height="150">
-            <p><strong>Rating:</strong> ${rating} stars</p>
-            <p><strong>Price:</strong> ${price}</p>
-            <p><strong>Reviews:</strong> ${review_count} reviews</p>
-        </div>
-    `;
-    
-
-}
-
-
-
-
-
-
+    function businessToHTML(business) {
+        const htmlRepresentation = `
+            <div>
+                <h2>${business.name}</h2>
+                <img src="${business.image_url}"/>
+                <p>${business.display_address}</p>
+                <p><strong>Rating:</strong> ${business.rating}</p>
+                <p><strong>Price:</strong> ${business.price}</p>
+                <p><strong># of Reviews:</strong> ${business.review_count}</p>
+            </div>
+        `;
+        return htmlRepresentation;
+    }
+   
 
 
 // 2. When you're done, uncomment the test code below and preview index.html in your browser:
