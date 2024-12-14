@@ -4,7 +4,6 @@ const getBusinesses = async (location, term, limit, openNow) => {
       location,
       term,
       limit,
-      open_now: openNow ? 'true' : 'false'
     });
     const endpoint = `${rootURL}?${params.toString()}`;
     const response = await fetch(endpoint);
