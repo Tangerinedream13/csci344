@@ -1,9 +1,18 @@
-async function getBusinesses(location, search_term, num_results, open) {
-    const query = `https://www.apitutor.org/yelp/simple/v3/businesses/search?location=${location}&term=${search_term}&limit=${num_results}&open_now=${open}`;
-    const response = await fetch(query);
-    const data = await response.json();
-    return data;
-}
+const getBusinesses = async (location, term, limit, openNow) => {
+    const rootURL = 'https://www.apitutor.org/yelp/simple/v3/businesses/search';
+    const params = new URLSearchParams({
+      location,
+      term,
+      limit,
+      open_now: openNow ? 'true' : 'false'
+    });
+    const endpoint = `${rootURL}?${params.toString()}`;
+    const response = await fetch(endpoint);
+    const jsonData = await response.json();
+    console.log(`Matches for ${term}:`, jsonData);
+    return jsonData.businesses;
+  };
+        
 
 function businessToHTML(businessObj) {
     const htmlRepresentation = `
@@ -12,7 +21,7 @@ function businessToHTML(businessObj) {
             <img src="${businessObj.image_url}"/>
             <p>${businessObj.display_address}</p>   
             <p><strong>Rating:</strong> ${businessObj.rating}</p>
-            <p><strong>Price:</strong> ${businessObj.price || "Not listed"}</p>
+            <p><strong>Price:</strong> ${businessObj.price || "Price not displayed."}</p>
             <p><strong># of Reviews:</strong> ${businessObj.review_count}</p>
         </div>
     `;
@@ -22,8 +31,18 @@ function businessToHTML(businessObj) {
 async function showResults() {
     const location = document.querySelector("#location").value;
     const search_term = document.querySelector("#term").value;
-    const open = document.querySelector("#open").checked;
-    const businesses = await getBusinesses(location, search_term, 10, open);
-    document.querySelector("#results").innerHTML = businesses.map(businessToHTML).join("");
-    return;
+    const openNow = document.querySelector("#openNow").checked;
+    const businesses = await getBusinesses(location, search_term, 10, openNow);
+    const results = document.querySelector("#results"); 
+
+
+    results.innerHTML = businesses.map(businessToHTML).join("");
+// I still wasn't able to get the button to work and display the restaurant to look like
+// it does in the instructions. 
 }
+  
+
+
+
+
+      

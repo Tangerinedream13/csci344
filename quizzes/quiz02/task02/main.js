@@ -1,13 +1,13 @@
 // 1. Create your businessToHTML function here:
-    function businessToHTML(business) {
+    function businessToHTML(businessObj) {
         const htmlRepresentation = `
             <div>
-                <h2>${business.name}</h2>
-                <img src="${business.image_url}"/>
-                <p>${business.display_address}</p>
-                <p><strong>Rating:</strong> ${business.rating}</p>
-                <p><strong>Price:</strong> ${business.price}</p>
-                <p><strong># of Reviews:</strong> ${business.review_count}</p>
+                <h2>${businessObj.name}</h2>
+                <img src="${businessObj.image_url}"/>
+                <p>${businessObj.display_address}</p>
+                <p><strong>Rating:</strong> ${businessObj.rating}</p>
+                <p><strong>Price:</strong> ${businessObj.price}</p>
+                <p><strong># of Reviews:</strong> ${businessObj.review_count}</p>
             </div>
         `;
         return htmlRepresentation;
