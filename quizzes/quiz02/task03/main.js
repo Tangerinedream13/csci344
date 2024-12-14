@@ -1,16 +1,11 @@
 const getBusinesses = async (location, term, limit, openNow) => {
-    const rootURL = 'https://www.apitutor.org/yelp/simple/v3/businesses/search';
-    const params = new URLSearchParams({
-      location,
-      term,
-      limit,
-    });
-    const endpoint = `${rootURL}?${params.toString()}`;
+    const rootURL =  ('https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3&open_now=true');
+    const endpoint = `${rootURL}?location=${location}&term=${term}&limit=${limit}&openNow=${openNow}`;
     const response = await fetch(endpoint);
     const jsonData = await response.json();
     console.log(`Matches for ${term}:`, jsonData);
     return jsonData.businesses;
-  };
+ };
         
 
 function businessToHTML(businessObj) {
